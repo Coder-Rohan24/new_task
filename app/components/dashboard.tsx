@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Menu, Bell, Users, Calendar, Briefcase, Activity, LifeBuoy, Settings,Sun,Moon } from "lucide-react";
-
+import { Menu, Bell, Mail,Users,ChevronDown,ContactRound, Calendar,Search, Briefcase, Activity, LifeBuoy, Settings,Sun,Moon } from "lucide-react";
 export default function Dashboard() {
   const [isOpen, setIsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
@@ -13,31 +12,27 @@ export default function Dashboard() {
         <div className="p-2 text-center w-full flex justify-center md:h-20 lg:h-24 items-center">
           <h1 className="font-bold md:text-2xl lg:text-4xl ">WeHR</h1>
         </div>
-        <nav className="mt-6 ml-3 flex flex-col space-y-4 items-center md:items-center lg:items-start" >
+        <nav className=" ml-3 flex flex-col space-y-4 items-center md:items-center lg:items-start" >
         <ul className={`mb-0 lg:mb-6 ${darkMode ? "text-white" : "text-gray-600"}`}>
-          <li className="flex items-center p-4 rounded-lg md:w-auto text-red-500 " >
-            <i className="fas fa-th-large mr-3">
-            </i>
+          <li className="flex items-center p-3 rounded-lg md:w-auto text-red-500 " >
+          <Briefcase/>
             <span className="ml-3 hidden md:hidden lg:inline">Dashboard</span>
           </li>
-          <li className="flex items-center p-4  hover:bg-gray-200 rounded-lg w-full md:w-auto">
-          <i className="fas fa-user-friends mr-3">
-          </i>
+          <li className="flex items-center p-3  hover:bg-gray-200 rounded-lg w-full md:w-auto">
+          <Users/>
+          
             <span className="ml-3 hidden md:hidden lg:inline">Recruitment</span>
           </li>
-          <li className="flex items-center p-4  hover:bg-gray-200 rounded-lg w-full md:w-auto">
-          <i className="fas fa-calendar-alt mr-3">
-          </i>
+          <li className="flex items-center p-3  hover:bg-gray-200 rounded-lg w-full md:w-auto">
+          <Calendar/>
             <span className="ml-3 hidden md:hidden lg:inline">Schedule</span>
           </li>
-          <li className="flex items-center p-4  hover:bg-gray-200 rounded-lg w-full md:w-auto">
-          <i className="fas fa-users mr-3">
-          </i>
+          <li className="flex items-center p-3  hover:bg-gray-200 rounded-lg w-full md:w-auto">
+          <ContactRound />
             <span className="ml-3 hidden md:hidden lg:inline">Employee</span>
           </li>
-          <li className="flex items-center p-4  hover:bg-gray-200 rounded-lg w-full ">
-          <i className="fas fa-building mr-3">
-          </i>
+          <li className="flex items-center p-3  hover:bg-gray-200 rounded-lg w-full ">
+          <Activity/>
             <span className="ml-3 hidden md:hidden lg:inline">Department</span>
           </li>
         </ul>
@@ -46,14 +41,12 @@ export default function Dashboard() {
         Other
         </h2>
         <ul>
-          <li className="flex items-center p-4  hover:bg-gray-200 rounded-lg w-full md:w-auto">
-          <i className="fas fa-life-ring mr-3">
-          </i>
+          <li className="flex items-center p-3  hover:bg-gray-200 rounded-lg w-full md:w-auto">
+          <LifeBuoy/>
             <span className="ml-3 hidden md:hidden lg:inline">Support</span>
           </li>
-          <li className="flex items-center p-4  hover:bg-gray-200 rounded-lg w-full md:w-auto">
-          <i className="fas fa-cog mr-3">
-          </i>
+          <li className="flex items-center p-3  hover:bg-gray-200 rounded-lg w-full md:w-auto">
+          <Settings/>
             <span className="ml-3 hidden md:hidden lg:inline">Settings</span>
           </li>
         </ul>
@@ -80,23 +73,21 @@ export default function Dashboard() {
             <div className="flex justify-between items-center ">
               <div className={`relative flex rounded-full py-2 px-4 pl-10 focus:outline-none ${darkMode?"bg-transparent sm:bg-gray-200": " bg-white sm:bg-gray-200"}`}>
                 <div><input className=" hidden sm:inline md:inline lg:inline w-[150px] custom-style-2" placeholder="Search" type="text"/></div>
-                <div><i className="fas fa-search text-gray-500 mt-[5px]">
-                </i>
+                <div><Search className=" text-gray-500 "/>
+    
                 </div>
               </div>
-              <div className="flex items-center">
-                <i className="fas fa-bell text-gray-500 mr-6">
-                </i>
-                <i className="fas fa-envelope text-gray-500 mr-6">
-                </i>
+              <div className={`flex items-center ${darkMode ? "text-white" : "text-gray-900"}`}>
+                <Bell className="mr-2"/>
+                <Mail className="mr-4 ml-2"/>
+                
                 <div className="flex items-center">
                   <img alt="User profile picture" className="rounded-full w-10 h-10 mr-2" height="40" src="/profile.png" width="40"/>
                   <span className={`font-semibold hidden md:inline lg:inline ${darkMode ? "text-white" : "text-gray-900"}`}>
                     Admirra John
                   </span>
             
-                  <i className="fas fa-chevron-down ml-2 text-gray-500">
-                  </i>
+                  <ChevronDown className= {`${darkMode ? "text-white" : "text-gray-900"}`}/>
                 </div>
               </div>
             </div>
@@ -107,20 +98,13 @@ export default function Dashboard() {
         {isOpen && (
           <div className="absolute top-14 left-0 mr-2 mt-7 ">
             <ul className={`py-2 md:ml-3 shadow-md z-10 p-4 ${darkMode?"bg-gray-900 text-white":" bg-gray-100 md:bg-white md:shadow-white"}`}>
-              <li className="p-3 hover:bg-gray-200 font-semibold"><i className="fas fa-th-large mr-3 text-red-500">
-              </i>Dashboard</li>
-              <li className="p-3 hover:bg-gray-200 font-semibold"><i className="fas fa-user-friends mr-3">
-              </i>Recruitment</li>
-              <li className="p-3 hover:bg-gray-200 font-semibold"><i className="fas fa-calendar-alt mr-3">
-              </i>Schedule</li>
-              <li className="p-3 hover:bg-gray-200 font-semibold"><i className="fas fa-users mr-3">
-              </i>Employee</li>
-              <li className="p-3 hover:bg-gray-200 font-semibold"><i className="fas fa-building mr-3">
-              </i>Department</li>
-              <li className="p-3 hover:bg-gray-200 font-semibold "><i className="fas fa-life-ring mr-3">
-              </i>Support</li>
-              <li className="p-3 hover:bg-gray-200 font-semibold"><i className="fas fa-cog mr-3">
-              </i>Settings</li>
+              <li className="p-3 hover:bg-gray-200 font-semibold flex"><Briefcase className="mr-2"/>Dashboard</li>
+              <li className="p-3 hover:bg-gray-200 font-semibold flex"><Users className="mr-2"/>Recruitment</li>
+              <li className="p-3 hover:bg-gray-200 font-semibold flex"><Calendar className="mr-2"/>Schedule</li>
+              <li className="p-3 hover:bg-gray-200 font-semibold flex"><ContactRound className="mr-2"/>Employee</li>
+              <li className="p-3 hover:bg-gray-200 font-semibold flex"><Activity className="mr-2"/>Department</li>
+              <li className="p-3 hover:bg-gray-200 font-semibold flex"><LifeBuoy className="mr-2"/>Support</li>
+              <li className="p-3 hover:bg-gray-200 font-semibold flex"><Settings className="mr-2"/>Settings</li>
             </ul>
           </div>
         )}
@@ -248,7 +232,8 @@ export default function Dashboard() {
        <p className="text-gray-500">
         Today, 13 Sep 2021
        </p>
-       <i className="fas fa-chevron-down ml-2 mt-1 text-gray-500"></i>
+  
+       <ChevronDown className=" ml-2 text-gray-500"/>
       </div>
       </div>
       <div className="space-y-4">
