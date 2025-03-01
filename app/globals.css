@@ -1,0 +1,31 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap');
+@import "tailwindcss";
+
+@media (max-width: 375px) {
+  .custom-style {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+@media (max-width: 800px) {
+  .custom-style-2 {
+    width:100px;
+  }
+}
+@media (max-width: 350px) {
+  .custom-style-3 {
+    background-color: transparent;
+  }
+}
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thumb-gray-300 {
+  scrollbar-color: #d1d5db transparent;
+}
+
+.dark .scrollbar-thumb-gray-600 {
+  scrollbar-color: #4b5563 transparent;
+}
